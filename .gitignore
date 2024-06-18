@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+node_modules/
+.env
+package-lock.json
+package.json
+tester.js
+text_py.py
+objects.py

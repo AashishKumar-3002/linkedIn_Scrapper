@@ -1,0 +1,6 @@
+selenium
+requests
+python-dotenv
+chromedriver-autoinstaller
+flask
+webdriver_manager
