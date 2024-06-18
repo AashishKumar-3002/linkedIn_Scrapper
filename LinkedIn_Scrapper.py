@@ -107,7 +107,7 @@ class LinkedInScrapper:
             role_type = (company_name_element.text.strip().split(' · ')[1]).replace(company_name, '')
             duration_element = soup.find('span', class_='t-black--light')
             duration = duration_element.text.strip().split(' · ')[0]
-            time = ''.join(filter(str.isdigit, (duration_element.text.strip().split(' · ')[1]).replace(duration, '')))
+            time = (duration_element.text.strip().split(' · ')[1]).replace(duration, '')
             location = soup.find_all('span', class_='t-14 t-normal t-black--light')
             #extract the second one from the above list
             if len(location) > 1:
@@ -149,7 +149,7 @@ class LinkedInScrapper:
                 duration = (company_element.text.strip().split(' · ')[1]).replace(company_name, '')
                 company_name_element = soup.find('span', class_='t-black--light')
                 location = company_name_element.text.strip().split(' · ')[0]
-                job_type = ''.join(filter(str.isdigit, (company_name_element.text.strip().split(' · ')[1]).replace(duration, '')))
+                job_type = (company_name_element.text.strip().split(' · ')[1]).replace(duration, '')
                 
                 main_dict = {
                     "contains_inner_subrole": is_inner,
@@ -170,7 +170,7 @@ class LinkedInScrapper:
                 job_title = soup.find('div', class_='t-bold').text.strip()
                 duration_element = soup.find('span', class_='t-black--light')
                 duration = duration_element.text.strip().split(' · ')[0]
-                time = ''.join(filter(str.isdigit, (duration_element.text.strip().split(' · ')[1]).replace(duration, '')))
+                time = (duration_element.text.strip().split(' · ')[1]).replace(duration, '')
                 job_description = soup.find('div', class_='display-flex align-items-center t-14 t-normal t-black')
                 if job_description:
                     job_description = job_description.text.strip()

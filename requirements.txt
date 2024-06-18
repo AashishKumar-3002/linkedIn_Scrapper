@@ -4,3 +4,4 @@ python-dotenv
 chromedriver-autoinstaller
 flask
 webdriver_manager
+bs4

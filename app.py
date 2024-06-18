@@ -25,12 +25,12 @@ def scrape():
     driver = scrapper.initialize_driver()
     try:
         scrapper.login_to_linkedin(driver)
-        bio_text = scrapper.scrape_linkedin_bio(driver, profile_url)
+        bio_text = scrapper.get_experiences(driver, profile_url)
         return jsonify({"bio": bio_text}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     finally:
         driver.quit()
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
